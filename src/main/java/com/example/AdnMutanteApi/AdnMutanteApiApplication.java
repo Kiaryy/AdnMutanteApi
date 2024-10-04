@@ -9,8 +9,12 @@ public class AdnMutanteApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdnMutanteApiApplication.class, args);
-		String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","TACACC","TCACTG"};
-		System.out.println(isMutant(turnArrayToMatrix(dna)));
+		String[] dna = {"CCGCTT","CATTGC","TATTGT","AAATG","TACACT","TCACTG"};
+		try {
+			System.out.println(isMutant(turnArrayToMatrix(dna)));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }
