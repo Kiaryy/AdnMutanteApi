@@ -3,8 +3,7 @@
 build/
 !gradle/wrapper/gradle-wrapper.properties
 !gradle/wrapper/gradle-wrapper.jar
-application.properties
-
+src/main/resources/application.properties
 # Java
 *.class
 *.jar
