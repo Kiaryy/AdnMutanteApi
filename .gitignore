@@ -1,0 +1,41 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.properties
+!gradle/wrapper/gradle-wrapper.jar
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+/out/
+
+# IDEs
+# IntelliJ IDEA
+/.idea/
+/*.iml
+
+# Eclipse
+/.project
+/.classpath
+/.settings/
+
+# VS Code
+/.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*~
+#*#
+
+# Logs and Temp
+*.log
+*.tmp
+*.swp
+
+# Environment Variables
+.env
+*.env
