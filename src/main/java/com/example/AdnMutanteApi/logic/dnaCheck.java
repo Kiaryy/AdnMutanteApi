@@ -1,9 +1,10 @@
 package com.example.AdnMutanteApi.logic;
 
 public class dnaCheck {
+    private static final int MIN_SEQUENCE = 4;
     public static boolean isMutant(char[][] dnaMatrix){
-        for (int i = 0; i < dnaMatrix.length; i++) {
-            for (int j = 0; j < dnaMatrix[i].length; j++) {
+        for (int i = 0; i < dnaMatrix.length-MIN_SEQUENCE; i++) {
+            for (int j = 0; j < dnaMatrix[i].length-MIN_SEQUENCE; j++) {
                 // Check rows for 4 matching characters
                 if(j + 3 <= dnaMatrix[i].length && (dnaMatrix[i][j] == dnaMatrix[i][j+1] && dnaMatrix[i][j] == dnaMatrix[i][j+2] && dnaMatrix[i][j] == dnaMatrix[i][j+3])){
                     // System.out.println("Horizontal starting from " + i + ", " + j);

@@ -10,7 +10,7 @@ import com.example.AdnMutanteApi.Exceptions.DnaFormatException;
 public class AdnMutanteApiApplication{
 	public static void main(String[] args) {
 		SpringApplication.run(AdnMutanteApiApplication.class, args);
-		String[] dna = {"ACCCCT","CATTGC","TATTGT","AAATGG","TACACT","TCACTG"};
+		String[] dna = {"ACCCCT", "CATTGC", "TATTGT", "AAATGG", "TACACT", "TCACTG"};
 		try {
 			System.out.println(isMutant(turnArrayToMatrix(dna)));
 		} catch (DnaFormatException e) {
