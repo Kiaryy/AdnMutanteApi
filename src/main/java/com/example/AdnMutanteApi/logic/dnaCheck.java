@@ -34,22 +34,32 @@ public class dnaCheck {
             dnaMatrix[i] = dna[i].toCharArray(); // We transform each string to an array of characers, and then we store it in a 2d array
         }
         // Dna Checking
-        for (int i = 0; i < dnaMatrix.length-MIN_SEQUENCE; i++) {
-            for (int j = 0; j < dnaMatrix[i].length-MIN_SEQUENCE; j++) {
+        for (int i = 0; i <= dnaMatrix.length - 4; i++) { // Ensure enough rows for a vertical match
+            for (int j = 0; j <= dnaMatrix[i].length - 4; j++) { // Ensure enough columns for a diagonal match
+        
                 // Check columns for 4 matching characters
-                if(i + 3 <= dnaMatrix.length && (dnaMatrix[i][j] == dnaMatrix[i+1][j] && dnaMatrix[i][j] == dnaMatrix[i+2][j] && dnaMatrix[i][j] == dnaMatrix[i+3][j])){
-                    // System.out.println("Vertical strating from " + j + ", " + i);
-                    return true;
+                if (dnaMatrix[i][j] ==dnaMatrix[i + 1][j] && 
+                    dnaMatrix[i][j] ==dnaMatrix[i + 2][j] && 
+                    dnaMatrix[i][j] ==dnaMatrix[i + 3][j]) {
+                    // System.out.println("Vertical starting from " + j + ", " + i);
+                    return true; // Vertical match found
                 }
+        
                 // Check for 4 matching characters in a diagonal line (Left to Right)
-                if(i + 3 <= dnaMatrix.length && j + 3 <= dnaMatrix[i].length &&(dnaMatrix[i][j] == dnaMatrix[i+1][j+1] && dnaMatrix[i][j] == dnaMatrix[i+2][j+2] && dnaMatrix[i][j] == dnaMatrix[i+3][j+3])){
-                    // System.out.println("Left to Right Diagonal starting from " + i +", " + j);
-                    return true;
+                if (dnaMatrix[i][j] ==dnaMatrix[i + 1][j+1] && 
+                    dnaMatrix[i][j] ==dnaMatrix[i + 2][j+2] && 
+                    dnaMatrix[i][j] ==dnaMatrix[i + 3][j+3]) {
+                    // System.out.println("Left to Right Diagonal starting from " + i + ", " + j);
+                    return true; // Right-down diagonal match found
                 }
+        
                 // Check for 4 matching characters in a diagonal line (Right to Left)
-                if(i + 3 <= dnaMatrix.length && j - 3 >= 0 &&(dnaMatrix[i][j] == dnaMatrix[i+1][j-1] && dnaMatrix[i][j] == dnaMatrix[i+2][j-2] && dnaMatrix[i][j] == dnaMatrix[i+3][j-3])){
-                    // System.out.println("Right to Left Diagonal starting from " + i +", " + j);
-                    return true;
+                if (j >= 3 && // Ensure there's room to the left
+                    dnaMatrix[i][j] ==dnaMatrix[i + 1][j-1] && 
+                    dnaMatrix[i][j] ==dnaMatrix[i + 2][j-2] && 
+                    dnaMatrix[i][j] ==dnaMatrix[i + 3][j-3]) {
+                    // System.out.println("Right to Left Diagonal starting from " + i + ", " + j);
+                    return true; // Left-down diagonal match found
                 }
             }
         }
