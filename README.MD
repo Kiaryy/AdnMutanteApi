@@ -1,10 +1,12 @@
 # Repo para la api del primer parcial prog 3
 ## Martin Moron
- ```
-https://dnamutantapi-latest.onrender.com/mutant    POST     Detecta si un array de strings contiene un mutante o no, y lo guarda en db.
-https://dnamutantapi-latest.onrender.com/stats     GET      Devuelve las estadisticas de mutantes.
- ```
-## Ejemplo de post request
+## API Functionality:
+- *POST:* Checks a DNA sequence is mutant or not, and then saves the results in db.
+  - URL: https://dnamutantapi-latest.onrender.com/mutant
+  
+- *GET:* Returns mutant and human statistics.
+  - URL: https://dnamutantapi-latest.onrender.com/stats
+## Example of POST Request:
  ```
     [ "AGCCCT",
     "CATTGC",
