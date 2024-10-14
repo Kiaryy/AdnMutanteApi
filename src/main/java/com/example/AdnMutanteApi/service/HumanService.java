@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.example.AdnMutanteApi.Exceptions.DnaFormatException;
+import com.example.AdnMutanteApi.model.DnaRequest;
 import com.example.AdnMutanteApi.model.Human;
 import com.example.AdnMutanteApi.model.Stats;
 import com.example.AdnMutanteApi.repository.HumanRepository;
@@ -25,9 +26,9 @@ public class HumanService {
     public HumanService(HumanRepository humanRepository) {
         this.humanRepository = humanRepository;
     }
-    public ResponseEntity<String> addHuman(List<String> dna) {
+    public ResponseEntity<String> addHuman(DnaRequest dnaRequest) {
         try{
-            boolean mutant = isMutant(dna.toArray(new String[0]));
+            boolean mutant = isMutant(dnaRequest.getDna());
             Human human = Human.builder()
                     .isMutant(mutant)
                     .dateAdded(LocalDate.now())

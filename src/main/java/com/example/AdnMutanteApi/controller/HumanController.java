@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.AdnMutanteApi.model.DnaRequest;
 import com.example.AdnMutanteApi.model.Stats;
 import com.example.AdnMutanteApi.service.HumanService;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 @AllArgsConstructor
@@ -17,8 +17,8 @@ public class HumanController {
 
     private final HumanService humanService;
     @PostMapping("/mutant")
-    public ResponseEntity<String> addHuman(@RequestBody List<String> dna){
-        return humanService.addHuman(dna);
+    public ResponseEntity<String> addHuman(@RequestBody DnaRequest dnarRequest){
+        return humanService.addHuman(dnarRequest);
     }
     @GetMapping("/stats")
     public ResponseEntity<Stats> getStats(){
